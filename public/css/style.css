@@ -1,0 +1,118 @@
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+.homeH{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: white 5px 4px 5px;
+}
+.homeH::after{
+    content:"";
+    display: flex;
+    width: 60%;
+    height: 1px;
+    -webkit-box-shadow:1px 1px 10px black;
+    -moz-box-shadow:1px 1px 10px black;
+    box-shadow: 1px 1px 10px black;
+    border-radius: 50%;
+}
+.firstCont{
+    overflow-x: hidden;
+}
+video{
+    position: relative;
+    height: 100vh;
+    object-fit: cover;
+}
+/**nav**/
+.navImg{
+    object-fit: contain;
+    height: 35px;
+}
+.headerDark{
+    background: #000;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.404);
+}
+.downHome{
+    color:white;
+    right: 0;
+    left:0;
+    transform: translate(50%,50%);
+    bottom: 100px;
+    z-index: 400;
+    font-size: 2rem;
+}
+.downHome a{
+    color:white;
+}
+.downHome a:hover{
+    color:goldenrod;
+}
+#info{
+    padding-top: 100px !important;
+}
+@media all and (max-width:1200px) {
+    video{
+     height: auto;
+    }
+     .downHome{
+        display: none;
+    }
+}
+.btnVehicle{
+    background: white !important;
+    color:black;
+}
+.btnVehicle:hover{
+    color:goldenrod;
+}
+
+/**show cars**/
+
+.carouselShow{
+    width: 100%;
+    height: 800px;
+    object-fit:cover;
+    zoom:1;
+}
+.cardSize{
+    min-height: 500px !important;
+    
+}
+.cardSizePicture{
+    min-height: 250px !important;
+}
+.infoHead{
+    background: black;
+}
+.infoCars{
+    height: 90px;
+}
+
+
+.infoCarsSpan  span{
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+    min-width: 120px;
+    text-align: center;
+    background: white;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    color:black;
+}
+.picto{
+    top:50%;
+    right:50%;
+    transform: translate(50%,-50%);
+    z-index:1;
+    max-height: 300px;
+}
+/*import*/

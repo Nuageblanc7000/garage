@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{car.model}}{% endblock %}
+
+{% block body %}
+<section class="container-fluid p-0">
+<div id="carouselExampleFade" class="carousel slide carousel-fade h-auto" data-bs-ride="carousel" >
+  <div class="carousel-inner">
+  {% for image in car.images %}
+    <div class="carousel-item {% if loop.first %}active{% endif %}">
+      <img src="/images/cars/{{image.nameImg}}" class="d-block w-100 carouselShow img-fluid" alt="test">
+    </div>
+  {% endfor %}
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="container-fluid p-0 position-relative">
+<img src="/images/carSvgBlack.svg" alt="svg" class="position-absolute picto">
+<div class="d-flex flex-wrap justify-content-evenly infoCars infoHead align-items-center text-white user-select-none">
+  <strong>{{car.km}} Km</strong> <H3>{{car.mark.nameMark}} {{car.model}}</H3> <strong>{{car.price}} €</strong>
+</div>
+<div class="container mt-3 mb-3">
+<h3>Description</h3>
+<p class="fs-5">{{car.description| raw | nl2br }}</p>
+</div>
+<div class="container-fluid bg-secondary">
+<div class="container d-flex justify-content-center align-items-center">
+  <h3 class="pt-2 pt-2 text-white">Options</h3>
+</div>
+<div class="container  d-flex flex-wrap justify-content-evenly infoCars infoCarsSpan align-items-center text-white user-select-none">
+{{car.options|striptags('<span>') | raw }}
+</div>
+<div class="container mt-3 mb-3">
+<h3>Information</h3>
+<p><strong>Cylindrée :</strong> {{car.engineSize}} cc</p>
+<p><strong>puissance :</strong> {{car.powerEngine}} kw</p>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

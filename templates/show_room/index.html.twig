@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ShowRooms{% endblock %}
+
+{% block body %}
+<section class="container-fluid p-0 bg-dark mt-0">
+<section class="showCars container h-auto bg-dark min-vh-100-100">
+<div class="row">
+    {% for show in shows %}
+    {% set url = path('carshow' , {'id':show.id}) %}
+      <div class="col-12 col-sm-12 col-lg-4 col-xl-4 mb-4 h-50 cardSize ">
+    <div class="card cardSize d-flex flex-column justify-content-between">
+      <div class="card-body d-flex flex-column justify-content-around">
+      <a href="{{ url }}">
+      <img src="/images/cars/{{show.coverImage}}" alt="{{show.model}}" class="card-img-top rounded-3 cardSizePicture">
+      </a>
+        <h5 class="card-title d-flex justify-content-between pt-3 pb-3">{{show.mark.nameMark}} {{show.model}} <strong>{{show.price}} €</strong></h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="{{url}}" class="btn btn-secondary btn-warning d-block m-auto m-0">Découvrir</a>
+      </div>
+    </div>
+  </div>     
+            {% endfor %}
+                </div>
+</section>
+</section>
+{% endblock %}
