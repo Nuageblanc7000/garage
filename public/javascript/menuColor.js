@@ -15,7 +15,7 @@
                 naviColor.classList.add('headerDark')
     
             }else{
-                naviColor.classList.remove('headerDark')
+                naviColor.classList.remove('headerDark ')
             }
         }
         
