@@ -9,13 +9,15 @@
             const  {scrollTop} = document.documentElement 
             
             let infoNav = naviColor.getBoundingClientRect().top;
-            
-            if(scrollTop  >= (scrollTop + infoVid - 50).toFixed()){
+            let infoNavBottom = naviColor.getBoundingClientRect().bottom;
+            console.log(infoVid)
+
+            if(infoNav  >=  (infoVid).toFixed() || infoNavBottom  >=  (infoVid - 50).toFixed() ){
                
                 naviColor.classList.add('headerDark')
     
             }else{
-                naviColor.classList.remove('headerDark ')
+                naviColor.classList.remove('headerDark')
             }
         }
         

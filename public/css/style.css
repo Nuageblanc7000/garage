@@ -115,4 +115,11 @@ video{
     z-index:1;
     max-height: 300px;
 }
+.trunc{
+    white-space: wrap; 
+    width: 100%; 
+    overflow: hidden;
+    height: 100px;
+    text-overflow: "..."; 
+}
 /*import*/
