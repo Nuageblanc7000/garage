@@ -85,6 +85,11 @@ class Voiture
      * @ORM\JoinColumn(nullable=false)
      */
     private $mark;
+    public function __toString()
+    {
+        return $this -> mark;
+    }
+ 
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -267,11 +272,11 @@ class Voiture
     {
         return $this->mark;
     }
-
+    
     public function setMark(?Mark $mark): self
     {
         $this->mark = $mark;
-
+        
         return $this;
     }
 

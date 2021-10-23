@@ -8,7 +8,7 @@
   <div class="carousel-inner">
   {% for image in car.images %}
     <div class="carousel-item {% if loop.first %}active{% endif %}">
-      <img src="/images/cars/{{image.nameImg}}" class="d-block w-100 carouselShow img-fluid" alt="test">
+      <img src="images/cars{{image.nameImg}}" class="d-block w-100 carouselShow img-fluid" alt="{{image.caption}}">
     </div>
   {% endfor %}
   </div>

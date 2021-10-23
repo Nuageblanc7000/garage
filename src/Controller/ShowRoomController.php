@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Mark;
 use App\Entity\Voiture;
+use App\Form\NewCarType;
 use App\Repository\VoitureRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -38,6 +39,24 @@ class ShowRoomController extends AbstractController
             'car' => $car
         ]);
     }
+    /**
+     * Undocumented function
+     * @Route("/carnew", name="newcar")
+     * @return Response
+     */
+    public function createCar(){
+        
+        $carNew = new Voiture();
+
+        $form = $this->createForm(NewCarType::class,$carNew);
+
+        return $this->render('show_room/newcar.html.twig',[
+            'form' => $form->createView()
+        ]);
+    }
+
+
 }
+
 
    

@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Mark
 {
+   
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -69,6 +71,11 @@ class Mark
         return $this;
     }
 
+    //ajout method toString pour afficher mes marques
+    public function __toString()
+    {
+        return (string) $this -> getNameMark();
+    }
     public function removeVoiture(Voiture $voiture): self
     {
         if ($this->voiture->removeElement($voiture)) {
