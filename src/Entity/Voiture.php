@@ -85,10 +85,7 @@ class Voiture
      * @ORM\JoinColumn(nullable=false)
      */
     private $mark;
-    public function __toString()
-    {
-        return $this -> mark;
-    }
+  
  
 
     /**
@@ -279,6 +276,7 @@ class Voiture
         
         return $this;
     }
+  
 
     public function getCoverImage(): ?string
     {

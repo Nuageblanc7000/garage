@@ -1,13 +1,18 @@
 {% extends 'base.html.twig' %}
-
+{#
+ {% form_theme form 'bootstrap_5_layout.html.twig' %}
+#}
+{% form_theme carForm _self %}
 {% block title %} form d'ajout voiture {% endblock %}
 
 {% block body %}
 <div class="container">
-{{form_start(form)}}
-{{dump()}}
+{{form_start(carForm)}}
 
+ {{dump(carForm)}}
+ {{form_widget(carForm)}}
+ <button type="submit" class="btn btn-primary mt-3 shadow mb-3">Création d'une annonce</button>
+{{form_end(carForm)}}
 
-{{form_end(form)}}
 </div>
 {% endblock %}

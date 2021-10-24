@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Form;
-
 use App\Entity\Mark;
 use App\Entity\Voiture;
+use App\Form\ImageCarType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -49,18 +49,16 @@ class NewCarType extends AbstractType
             ->add('description',TextType::class, $this-> getConfiguration('Description du véhicule:','description véhicule..'))
             ->add('options',TextType::class, $this-> getConfiguration('Options du véhicule:','Gps,cruise-control...'))
             ->add('coverImage',UrlType::class, $this-> getConfiguration('Ajouter une url d\'image:','https://picsum.photos/200/300'))
-            ->add('mark',EntityType::class, $this->getConfiguration('Choix de la marque:',false,[
-                'class' => Voiture::class,
-                'choice_label' => 'mark'
-            ]))
-                ->add('images',CollectionType::class,[
-                    'entry_type' => imageType::class,
-                    'allow_data' => true,
-                    'allow_delte' => true
+
+            ->add('mark',CollectionType::class, $this->getConfiguration('Choix de la marque:',false))
+            ->add('images',CollectionType::class,[
+                'entry_type' => ImageCarType::class,
+                'allow_add' => true,
+                'allow_delete' => true
                 ])
-            
-        ;
-    }
+                
+                ;
+            }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
