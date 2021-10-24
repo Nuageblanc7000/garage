@@ -1,18 +1,31 @@
 {% extends 'base.html.twig' %}
-{#
- {% form_theme form 'bootstrap_5_layout.html.twig' %}
-#}
-{% form_theme carForm _self %}
+{# permet de créer le theme de son formulaire sois même #}
+ {% form_theme carForm _self %}
+
 {% block title %} form d'ajout voiture {% endblock %}
 
 {% block body %}
 <div class="container">
+{#starter du form#}
 {{form_start(carForm)}}
-
- {{dump(carForm)}}
+{{dump()}}
  {{form_widget(carForm)}}
  <button type="submit" class="btn btn-primary mt-3 shadow mb-3">Création d'une annonce</button>
 {{form_end(carForm)}}
 
 </div>
 {% endblock %}
+{% block _new_car_images_widget %}
+<h3>Ajouter une image(s):</h3>
+{{form_widget(form)}}
+<input type="hidden"  id="widget-counter" value="0">
+
+<div class="form-group">
+<button id="add-image" class="btn btn-primary">Ajouter une image</button>
+</div>
+{{dump(form)}}
+{% endblock %}
+{% block  _new_car_images_entry_row %}
+{{form_widget(form)}}
+{% endblock %}
+

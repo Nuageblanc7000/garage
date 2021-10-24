@@ -46,10 +46,6 @@ class ShowRoomController extends AbstractController
             ->setCaption('Titre 1');
         
         $carNew->addImage($image1);
-        $image2 = new Image();
-        $image2->setNameImg('http://placehold.it/400x200')
-            ->setCaption('Titre 2');
-        $carNew->addImage($image2);    
         
 
         $form = $this->createForm(NewCarType::class,$carNew);
@@ -57,11 +53,14 @@ class ShowRoomController extends AbstractController
         
         // quand je vais vérifier si le form est envoyé et si il est valide
         if($form -> isSubmitted() && $form -> isValid()){
+            
+            
             foreach($carNew->getImages() as $image){
+                dump($image);
                 $image->setVoiture($carNew);
                 $manager->persist($image);
             }
-
+            $manager->persist($carNew); 
             $manager->flush();
 
             return $this->redirectToRoute('carshow',['id' => $carNew->getId()]);

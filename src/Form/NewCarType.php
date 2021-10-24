@@ -50,12 +50,17 @@ class NewCarType extends AbstractType
             ->add('options',TextType::class, $this-> getConfiguration('Options du véhicule:','Gps,cruise-control...'))
             ->add('coverImage',UrlType::class, $this-> getConfiguration('Ajouter une url d\'image:','https://picsum.photos/200/300'))
 
-            ->add('mark',CollectionType::class, $this->getConfiguration('Choix de la marque:',false))
+            ->add('mark',EntityType::class, $this->getConfiguration('Choix de la marque:',false,[
+                'class' => Mark::class,
+                'choice_label' => 'nameMark'
+            ]))
+            
             ->add('images',CollectionType::class,[
                 'entry_type' => ImageCarType::class,
                 'allow_add' => true,
                 'allow_delete' => true
                 ])
+                
                 
                 ;
             }
