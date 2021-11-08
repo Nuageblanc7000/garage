@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Controller;
-use App\Entity\Mark;
-use App\Entity\Image;
+//use App\Entity\Mark;
+//use App\Entity\Image;
 use App\Entity\Voiture;
 use App\Form\NewCarType;
 use App\Repository\VoitureRepository;
@@ -38,14 +38,6 @@ class ShowRoomController extends AbstractController
         
         $carNew = new Voiture();
 // on met deux images pour voir si tout c'est bien passé quand et voir si ça m'affiche bien 
-          $title = $request->request->get('addVoiture');
-        dump($title);
-        
-        $image1 = new Image();
-        $image1->setNameImg('http://placehold.it/400x200')
-            ->setCaption('Titre 1');
-        
-        $carNew->addImage($image1);
         
 
         $form = $this->createForm(NewCarType::class,$carNew);
@@ -53,10 +45,7 @@ class ShowRoomController extends AbstractController
         
         // quand je vais vérifier si le form est envoyé et si il est valide
         if($form -> isSubmitted() && $form -> isValid()){
-            
-            
             foreach($carNew->getImages() as $image){
-                dump($image);
                 $image->setVoiture($carNew);
                 $manager->persist($image);
             }

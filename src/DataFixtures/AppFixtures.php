@@ -45,16 +45,16 @@ class AppFixtures extends Fixture
         10 => '508'
     ];
     $coverFaker = [
-        1 => 'insignia.jpg',
-        2 => 'arteon.jpg',
-        3 => 'gt-500.jpg',
-        4 => 'giulia-super.jpg',
-        5 => 'm-2-competition.jpg',
-        6 => 'cls-200.jpg',
-        7 => 'panamera.jpg',
-        8 => 'xf-v8.jpg',
-        9 => 'arkana.jpg',
-        10 => '508.jpg'
+        1 => 'http://www.wetterene-remy-dev.com/picture/cars/insignia.JPG',
+        2 => 'http://www.wetterene-remy-dev.com/picture/cars/arteon.jpg',
+        3 => 'http://www.wetterene-remy-dev.com/picture/cars/gt-500.jpg',
+        4 => 'http://www.wetterene-remy-dev.com/picture/cars/giulia-super.jpg',
+        5 => 'http://www.wetterene-remy-dev.com/picture/cars/m-2-competition.jpg',
+        6 => 'http://www.wetterene-remy-dev.com/picture/cars/cls-200.jpg',
+        7 => 'http://www.wetterene-remy-dev.com/picture/cars/panamera.jpg',
+        8 => 'http://www.wetterene-remy-dev.com/picture/cars/xf-v8.jpg',
+        9 => 'http://www.wetterene-remy-dev.com/picture/cars/arkana.jpg',
+        10 => 'http://www.wetterene-remy-dev.com/picture/cars/508.jpg'
     ];
     $fuelFaker=[1 => 'essence',2 =>'diesel'];
         for($i=1;$i<= 10; $i++){

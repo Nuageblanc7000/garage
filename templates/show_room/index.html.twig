@@ -12,7 +12,7 @@
     <div class="card cardSize d-flex flex-column justify-content-between">
       <div class="card-body d-flex flex-column justify-content-around">
       <a href="{{ url }}">
-      <img src="/images/cars/{{show.coverImage}}" alt="{{show.model}}" class="card-img-top rounded-3 cardSizePicture">
+      <img src="{{show.coverImage}}" alt="{{show.model}}" class="card-img-top rounded-3 cardSizePicture">
       </a>
         <h5 class="card-title d-flex justify-content-between pt-3 pb-3 shadow ps-1 px-1" >{{show.mark.nameMark | capitalize }} {{show.model | capitalize}} <strong>{{show.price}} €</strong></h5>
         <h5 class="card-title text-center d-block m-auto mt-4 rounded-1 shadow mb-4 pt-2 pb-2 bg-warning w-50 text-white">{{show.km}} Km </strong></h5>

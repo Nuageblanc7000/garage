@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use DateTimeInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=VoitureRepository::class)
@@ -22,6 +23,13 @@ class Voiture
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     * min = 2,
+     * max = 50,
+     *      minMessage = "votre message doit avoir minimum 2 caractères",
+     *      maxMessage = "votre message doit avoir maximum 50 caractères"
+     * )
      */
     private $model;
 
@@ -90,6 +98,7 @@ class Voiture
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Url
      */
     private $coverImage;
 
